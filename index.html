@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pradipta Kumar Prusty | Data Engineer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+  :root{
+    --ink:#101828;
+    --ink-soft:#344055;
+    --muted:#667085;
+    --paper:#F3F5F7;
+    --raised:#FFFFFF;
+    --line:#DDE3EA;
+    --accent:#FF6A39;
+    --accent-dark:#E4551F;
+    --teal:#0EA5A4;
+    --radius:14px;
+    --maxw:1080px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink-soft);
+    background:
+      linear-gradient(var(--line) 1px, transparent 1px) 0 0/100% 42px,
+      linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0/42px 100%,
+      var(--paper);
+    background-attachment:fixed;
+  }
+  a{color:inherit;}
+  img{display:block;max-width:100%;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:.72rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent-dark);
+    font-weight:600;
+  }
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;color:var(--ink);}
+  section{padding:86px 0;}
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+  :focus-visible{outline:3px solid var(--teal);outline-offset:3px;}
+
+  /* ===== NAV ===== */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(243,245,247,.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;padding:16px 28px;
+    display:flex;align-items:center;justify-content:space-between;gap:20px;
+  }
+  .logo{
+    font-family:'JetBrains Mono',monospace;font-weight:600;
+    font-size:.95rem;color:var(--ink);
+    display:flex;align-items:center;gap:8px;
+  }
+  .logo .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);display:inline-block;}
+  nav.links{display:flex;gap:28px;align-items:center;}
+  nav.links a{
+    font-size:.88rem;font-weight:600;color:var(--ink-soft);
+    text-decoration:none;position:relative;
+  }
+  nav.links a::after{
+    content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;
+    background:var(--accent);transition:width .2s ease;
+  }
+  nav.links a:hover::after{width:100%;}
+  .nav-cta{
+    font-family:'JetBrains Mono',monospace;font-size:.78rem;font-weight:600;
+    background:var(--ink);color:#fff;padding:9px 16px;border-radius:8px;
+    text-decoration:none;white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--accent-dark);}
+  .nav-toggle{display:none;}
+
+  /* ===== HERO ===== */
+  .hero{padding:72px 0 90px;}
+  .hero-grid{
+    display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;
+  }
+  .avatar-block{display:flex;align-items:center;gap:18px;margin-bottom:22px;}
+  .avatar-ring{
+    width:64px;height:64px;border-radius:50%;
+    background:var(--raised);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;overflow:hidden;
+    flex-shrink:0;position:relative;
+  }
+  .avatar-ring img{width:100%;height:100%;object-fit:cover;}
+  .status-pill{
+    display:inline-flex;align-items:center;gap:7px;
+    font-family:'JetBrains Mono',monospace;font-size:.74rem;font-weight:500;
+    color:var(--teal);background:rgba(14,165,164,.09);
+    border:1px solid rgba(14,165,164,.3);
+    padding:5px 11px;border-radius:20px;
+  }
+  .status-pill .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);}
+  .hero h1{font-size:2.6rem;line-height:1.12;font-weight:700;margin:14px 0 10px;letter-spacing:-.02em;}
+  .hero h1 span{color:var(--accent-dark);}
+  .hero .role{
+    font-family:'JetBrains Mono',monospace;font-size:.95rem;color:var(--ink-soft);
+    margin-bottom:20px;
+  }
+  .hero p.bio{max-width:520px;font-size:1rem;line-height:1.75;color:var(--muted);margin-bottom:30px;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:13px 22px;border-radius:10px;font-weight:700;font-size:.9rem;
+    text-decoration:none;transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn-primary{color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-dark));box-shadow:0 10px 24px rgba(255,106,57,.28);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(255,106,57,.36);}
+  .btn-secondary{color:var(--ink);background:var(--raised);border:1px solid var(--line);}
+  .btn-secondary:hover{border-color:#c7cfd8;transform:translateY(-2px);}
+  .social-row{display:flex;gap:10px;}
+  .social-row a{
+    width:38px;height:38px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--raised);border:1px solid var(--line);color:var(--muted);
+    text-decoration:none;transition:all .2s ease;
+  }
+  .social-row a:hover{background:var(--ink);color:#fff;border-color:var(--ink);}
+
+  /* ===== PIPELINE SIGNATURE DIAGRAM ===== */
+  .pipeline-card{
+    background:var(--ink);border-radius:20px;padding:34px 26px;
+    position:relative;overflow:hidden;
+  }
+  .pipeline-card::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 80% 0%, rgba(255,106,57,.18), transparent 55%);
+  }
+  .pipeline-title{
+    font-family:'JetBrains Mono',monospace;color:#9aa4b2;font-size:.72rem;
+    letter-spacing:.1em;text-transform:uppercase;margin-bottom:26px;position:relative;
+  }
+  .pipeline{position:relative;}
+  .pnode{display:flex;align-items:center;gap:14px;position:relative;padding-bottom:34px;}
+  .pnode:last-child{padding-bottom:0;}
+  .pnode::before{
+    content:"";position:absolute;left:15px;top:34px;bottom:0;width:1px;
+    background:repeating-linear-gradient(to bottom, rgba(255,255,255,.28) 0 4px, transparent 4px 9px);
+  }
+  .pnode:last-child::before{display:none;}
+  .pdot{
+    width:32px;height:32px;border-radius:9px;flex-shrink:0;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);
+    display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:.85rem;
+    position:relative;z-index:1;
+  }
+  .pnode.active .pdot{background:var(--accent);border-color:var(--accent);color:#fff;
+    box-shadow:0 0 0 5px rgba(255,106,57,.16);}
+  .pnode strong{display:block;color:#fff;font-size:.92rem;font-weight:600;}
+  .pnode span{display:block;color:#9aa4b2;font-size:.78rem;font-family:'JetBrains Mono',monospace;}
+  @media (prefers-reduced-motion:no-preference){
+    .pnode.active .pdot{animation:pulse 2.4s ease-in-out infinite;}
+  }
+  @keyframes pulse{
+    0%,100%{box-shadow:0 0 0 5px rgba(255,106,57,.16);}
+    50%{box-shadow:0 0 0 9px rgba(255,106,57,.06);}
+  }
+
+  /* ===== SECTION HEADS ===== */
+  .section-head{margin-bottom:38px;max-width:640px;}
+  .section-head h2{font-size:1.9rem;margin-top:8px;font-weight:700;letter-spacing:-.01em;}
+
+  /* ===== ABOUT ===== */
+  .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:start;}
+  .about-grid p{line-height:1.85;color:var(--muted);margin-bottom:16px;}
+  .fact-table{
+    background:var(--raised);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .fact-row{
+    display:flex;justify-content:space-between;gap:14px;
+    padding:14px 20px;border-bottom:1px solid var(--line);font-size:.88rem;
+  }
+  .fact-row:last-child{border-bottom:none;}
+  .fact-key{font-family:'JetBrains Mono',monospace;color:var(--muted);font-size:.78rem;}
+  .fact-val{color:var(--ink);font-weight:600;text-align:right;}
+
+  /* ===== SKILLS ===== */
+  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  .skill-card{
+    background:var(--raised);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;
+  }
+  .skill-card h3{
+    font-family:'JetBrains Mono',monospace;font-size:.78rem;text-transform:uppercase;
+    letter-spacing:.08em;color:var(--muted);font-weight:600;margin-bottom:14px;
+  }
+  .chip-row{display:flex;flex-wrap:wrap;gap:9px;}
+  .chip{
+    display:inline-flex;align-items:center;gap:7px;
+    font-family:'JetBrains Mono',monospace;font-size:.8rem;font-weight:500;
+    background:var(--ink);color:#fff;padding:8px 13px;border-radius:8px;
+    border:1px solid var(--ink);
+  }
+  .chip i{color:var(--accent);}
+
+  /* ===== PROJECTS ===== */
+  .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .project-card{
+    background:var(--raised);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;display:flex;flex-direction:column;gap:12px;
+  }
+  .project-id{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--accent-dark);font-weight:600;}
+  .project-card h3{font-size:1.08rem;font-weight:700;}
+  .project-card p{font-size:.88rem;color:var(--muted);line-height:1.6;flex-grow:1;}
+  .project-stack{display:flex;flex-wrap:wrap;gap:6px;}
+  .tag-mini{
+    font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--ink-soft);
+    background:var(--paper);border:1px solid var(--line);padding:3px 8px;border-radius:6px;
+  }
+  .project-link{font-size:.84rem;font-weight:700;color:var(--accent-dark);text-decoration:none;display:inline-flex;align-items:center;gap:6px;}
+  .project-link:hover{text-decoration:underline;}
+
+  /* ===== EDUCATION ===== */
+  .edu-row{
+    display:flex;justify-content:space-between;align-items:flex-start;gap:24px;
+    background:var(--raised);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 26px;margin-bottom:16px;
+  }
+  .edu-row:last-child{margin-bottom:0;}
+  .edu-left strong{font-size:1.05rem;color:var(--ink);display:block;margin-bottom:4px;}
+  .edu-left span{font-size:.88rem;color:var(--muted);}
+  .edu-right{
+    font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--accent-dark);
+    background:rgba(255,106,57,.08);border:1px solid rgba(255,106,57,.25);
+    padding:6px 12px;border-radius:20px;white-space:nowrap;
+  }
+
+  /* ===== CONTACT ===== */
+  .contact-card{
+    background:var(--ink);border-radius:20px;padding:52px 48px;
+    display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;
+    position:relative;overflow:hidden;
+  }
+  .contact-card::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 15% 100%, rgba(14,165,164,.16), transparent 55%);
+  }
+  .contact-card h2{color:#fff;font-size:1.8rem;margin-bottom:12px;position:relative;}
+  .contact-card p{color:#9aa4b2;line-height:1.7;margin-bottom:24px;max-width:440px;position:relative;}
+  .contact-card .cta-row{position:relative;}
+  .contact-card .btn-secondary{background:transparent;border-color:rgba(255,255,255,.24);color:#fff;}
+  .contact-card .btn-secondary:hover{border-color:#fff;}
+  .contact-list{position:relative;display:flex;flex-direction:column;gap:16px;}
+  .contact-item{display:flex;align-items:center;gap:12px;color:#fff;font-size:.92rem;}
+  .contact-item i{
+    width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,.08);
+    display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0;
+  }
+  .contact-item a{color:#fff;text-decoration:none;}
+  .contact-item a:hover{text-decoration:underline;}
+
+  footer{padding:34px 0;text-align:center;}
+  footer p{font-size:.8rem;color:var(--muted);font-family:'JetBrains Mono',monospace;}
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:860px){
+    .hero-grid,.about-grid,.contact-card{grid-template-columns:1fr;}
+    .skills-grid{grid-template-columns:1fr;}
+    .projects-grid{grid-template-columns:1fr;}
+    nav.links{display:none;}
+    .nav-cta{display:none;}
+    .hero h1{font-size:2.05rem;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="logo"><span class="dot"></span>PKP</div>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <!-- Replace with a hosted link to your resume PDF -->
+    <a href="c:\Users\PRADIPTA\Documents\Pradipta_Kumar_Prusty_Resume.pdf" class="nav-cta" target="_blank">Resume ↗</a>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="avatar-block">
+        <div class="avatar-ring">
+          <!-- Replace this src with a hosted image URL (a local C:\ path will not display once this file is opened elsewhere) -->
+          <img src="C:\Users\PRADIPTA\Pictures\my photo.jpg.png" alt="Pradipta Kumar Prusty">
+        </div>
+        <span class="status-pill"><span class="dot"></span>Available for opportunities</span>
+      </div>
+      <p class="eyebrow">Data Engineer · BCA Student</p>
+      <h1>Pradipta Kumar <span>Prusty</span></h1>
+      <p class="role">turning raw data into reliable pipelines</p>
+      <p class="bio">
+        BCA student and aspiring Data Engineer passionate about SQL, MySQL, Databricks,
+        and modern data technologies. Focused on building reliable, scalable and
+        efficient data solutions — from schema design to production pipelines.
+      </p>
+      <div class="cta-row">
+        <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i>Contact Me</a>
+        <!-- Replace href with a hosted resume PDF link -->
+        <a href="c:\Users\PRADIPTA\Documents\Pradipta_Kumar_Prusty_Resume.pdf" class="btn btn-secondary" target="_blank"><i class="fa-solid fa-file-lines"></i>View Resume</a>
+      </div>
+      <div class="social-row">
+        <a href="https://www.linkedin.com/in/pradipta-kumar-prusty-52a518413/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <!-- Replace with your real GitHub URL -->
+        <a href="#" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="#" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" target="_blank" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+      </div>
+    </div>
+
+    <!-- Signature element: a small pipeline diagram built from his own skill stack -->
+    <div class="pipeline-card">
+      <p class="pipeline-title">// how the data moves</p>
+      <div class="pipeline">
+        <div class="pnode active">
+          <div class="pdot"><i class="fa-solid fa-database"></i></div>
+          <div><strong>Raw Data</strong><span>MySQL · SQL</span></div>
+        </div>
+        <div class="pnode active">
+          <div class="pdot"><i class="fa-brands fa-python"></i></div>
+          <div><strong>Transform</strong><span>Python · Java</span></div>
+        </div>
+        <div class="pnode active">
+          <div class="pdot"><i class="fa-solid fa-cloud"></i></div>
+          <div><strong>Process</strong><span>Databricks</span></div>
+        </div>
+        <div class="pnode">
+          <div class="pdot"><i class="fa-solid fa-chart-line"></i></div>
+          <div><strong>Insight</strong><span>Reliable · Scalable</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="section-head">
+        <p class="eyebrow">01 · About</p>
+        <h2>Building the plumbing behind good decisions</h2>
+      </div>
+      <p>
+        I'm a BCA student focused on data engineering — the discipline of getting data
+        from where it's created to where it's useful, cleanly and reliably. I like working
+        close to the database: schema design, query performance, and pipelines that don't
+        break when the data gets messy.
+      </p>
+      <p>
+        Right now I'm deepening my hands-on experience with Databricks and SQL-based
+        workflows, and looking for internship or entry-level opportunities where I can
+        contribute to real data systems.
+      </p>
+    </div>
+    <div class="fact-table">
+      <div class="fact-row"><span class="fact-key">location</span><span class="fact-val">India</span></div>
+      <div class="fact-row"><span class="fact-key">status</span><span class="fact-val">Available for opportunities</span></div>
+      <div class="fact-row"><span class="fact-key">degree</span><span class="fact-val">BCA (in progress)</span></div>
+      <div class="fact-row"><span class="fact-key">focus</span><span class="fact-val">Data Engineering</span></div>
+      <div class="fact-row"><span class="fact-key">contact</span><span class="fact-val">pradiptakumarprusty2006@gmail.com</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SKILLS ===================== -->
+<section id="skills" style="background:var(--raised);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">02 · Core Expertise</p>
+      <h2>Skills, grouped like a stack</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Languages</h3>
+        <div class="chip-row">
+          <span class="chip"><i class="fa-brands fa-python"></i>Python</span>
+          <span class="chip"><i class="fa-solid fa-code"></i>Java</span>
+          <span class="chip"><i class="fa-solid fa-table"></i>SQL</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Databases &amp; Platforms</h3>
+        <div class="chip-row">
+          <span class="chip"><i class="fa-solid fa-database"></i>MySQL</span>
+          <span class="chip"><i class="fa-solid fa-cloud"></i>Databricks</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Tools</h3>
+        <div class="chip-row">
+          <span class="chip"><i class="fa-brands fa-git-alt"></i>Git</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Discipline</h3>
+        <div class="chip-row">
+          <span class="chip"><i class="fa-solid fa-layer-group"></i>Data Engineering</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROJECTS ===================== -->
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">03 · Projects</p>
+      <h2>Selected work</h2>
+    </div>
+    <!-- Replace each card below with a real project: title, one-line description, tools used, and a live/repo link -->
+    <div class="projects-grid">
+      <div class="project-card">
+        <span class="project-id">proj_01</span>
+        <h3>[Project name]</h3>
+        <p>[One or two lines on what this project does, the problem it solves, and your role in it.]</p>
+        <div class="project-stack"><span class="tag-mini">SQL</span><span class="tag-mini">Python</span></div>
+        <a href="#" class="project-link">View project <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="project-card">
+        <span class="project-id">proj_02</span>
+        <h3>[Project name]</h3>
+        <p>[One or two lines on what this project does, the problem it solves, and your role in it.]</p>
+        <div class="project-stack"><span class="tag-mini">Databricks</span><span class="tag-mini">MySQL</span></div>
+        <a href="#" class="project-link">View project <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="project-card">
+        <span class="project-id">proj_03</span>
+        <h3>[Project name]</h3>
+        <p>[One or two lines on what this project does, the problem it solves, and your role in it.]</p>
+        <div class="project-stack"><span class="tag-mini">Java</span><span class="tag-mini">Git</span></div>
+        <a href="#" class="project-link">View project <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EDUCATION ===================== -->
+<section id="education" style="background:var(--raised);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">04 · Education</p>
+      <h2>Academic background</h2>
+    </div>
+    <!-- Fill in your actual institution and years -->
+    <div class="edu-row">
+      <div class="edu-left">
+        <strong>Bachelor of Computer Applications (BCA)</strong>
+        <span>[Rajdhani Degree College, Baramunda]</span>
+      </div>
+      <div class="edu-right">[2024 – 2027]</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card">
+      <div>
+        <h2>Let's build something reliable</h2>
+        <p>
+          Open to internships and entry-level data engineering roles. Reach out
+          if you're hiring or just want to talk about data pipelines.
+        </p>
+        <div class="cta-row">
+          <a href="mailto:pradiptakumarprusty2006@gmail.com" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i>Email Me</a>
+          <a href="https://www.linkedin.com/in/pradipta-kumar-prusty-52a518413/" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-linkedin-in"></i>LinkedIn</a>
+        </div>
+      </div>
+      <div class="contact-list">
+        <div class="contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:pradiptakumarprusty2006@gmail.com">pradiptakumarprusty2006@gmail.com</a></div>
+        <div class="contact-item"><i class="fa-solid fa-location-dot"></i><span>India</span></div>
+        <div class="contact-item"><i class="fa-solid fa-circle-check"></i><span>Available for opportunities</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Pradipta Kumar Prusty — Data Engineering</p>
+</footer>
+
+</body>
+</html>
