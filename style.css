@@ -480,104 +480,22 @@ section {
     gap: 20px;
 }
 
-
-/* ================================
-   SKILL CARDS WITH BACKGROUND
-================================ */
-
 .skill-card {
-    position: relative;
-    overflow: hidden;
-
     padding: 30px 20px;
-    min-height: 170px;
 
     text-align: center;
 
-    background-color: #101010;
-    background-size: cover;
-    background-position: center;
-
+    background: #101010;
     border: 1px solid #252525;
     border-radius: 12px;
 
     transition: 0.3s ease;
 }
 
-
-/* Dark overlay */
-
-.skill-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background: rgba(0, 0, 0, 0.78);
-
-    z-index: 0;
-}
-
-
-/* Keep content above image */
-
-.skill-card > * {
-    position: relative;
-    z-index: 1;
-}
-
-
-/* ================================
-   SKILL BACKGROUND IMAGES
-================================ */
-
-.python-card {
-    background-image: url("images/python.jpg");
-}
-
-.sql-card {
-    background-image: url("images/sql.jpg");
-}
-
-.mysql-card {
-    background-image: url("images/mysql.jpg");
-}
-
-.databricks-card {
-    background-image: url("images/databricks.jpg");
-}
-
-.spark-card {
-    background-image: url("images/spark.jpg");
-}
-
-.delta-card {
-    background-image: url("images/delta.jpg");
-}
-
-.html-card {
-    background-image: url("images/html.jpg");
-}
-
-.office-card {
-    background-image: url("images/office.jpg");
-}
-
-
-/* ================================
-   SKILL HOVER
-================================ */
-
 .skill-card:hover {
     transform: translateY(-8px);
-
     border-color: #ff2b2b;
-
-    box-shadow:
-        0 15px 35px rgba(255, 0, 0, 0.15);
-}
-
-.skill-card:hover::before {
-    background: rgba(0, 0, 0, 0.62);
+    box-shadow: 0 15px 35px rgba(255, 0, 0, 0.12);
 }
 
 .skill-icon {
@@ -763,17 +681,8 @@ body.light-mode .skill-card,
 body.light-mode .project-card,
 body.light-mode .contact-card,
 body.light-mode .stat-box {
-    background-color: #ffffff;
+    background: #ffffff;
     border-color: #ddd;
-}
-
-/* Keep skill images visible in light mode */
-body.light-mode .skill-card::before {
-    background: rgba(255, 255, 255, 0.72);
-}
-
-body.light-mode .skill-card:hover::before {
-    background: rgba(255, 255, 255, 0.58);
 }
 
 body.light-mode .hero-content h2 {
