@@ -1,607 +1,517 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>Pradipta Kumar Prusty | Data Engineer</title>
+    <title>Pradipta Kumar Prusty | Data Engineer</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-
-<link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-<link rel="stylesheet" href="style.css">
-```
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="navbar">
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <div class="nav-container">
 
-```
-<a href="#home" class="logo">
-    PKP<span>.</span>
-</a>
+            <a href="#home" class="logo">PKP<span>.</span></a>
 
-<nav class="nav-menu">
-
-    <a href="#home" class="active">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-
-</nav>
-
-<button class="theme-toggle" id="themeToggle">
-    <span id="themeIcon">☾</span>
-</button>
-```
-
-</header>
-
-<main>
-
-<!-- ================= HOME ================= -->
-
-<section class="hero" id="home">
-
-```
-<div class="hero-background-text">
-    DATA
-</div>
-
-<div class="hero-container">
-
-    <div class="hero-content">
-
-        <p class="hero-small-title">
-            DATA ENGINEER · BCA STUDENT
-        </p>
-
-        <h1>
-            Pradipta Kumar
-            <span>Prusty</span>
-        </h1>
-
-        <h2>
-            Aspiring <span>Data Engineer</span>
-        </h2>
-
-        <p class="hero-tagline">
-            "turning raw data into reliable pipelines"
-        </p>
-
-        <p class="hero-description">
-            BCA student and aspiring Data Engineer passionate about
-            SQL, MySQL, Databricks, and modern data technologies.
-            Focused on building reliable, scalable and efficient
-            data solutions — from schema design to production pipelines.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#projects" class="btn btn-primary">
-                <i class="fa-solid fa-code"></i>
-                View Projects
-            </a>
-
-            <a href="#contact" class="btn btn-outline">
-                <i class="fa-regular fa-envelope"></i>
-                Contact Me
-            </a>
-
-        </div>
-
-        <div class="availability">
-            <span class="availability-dot"></span>
-            Available for opportunities
-        </div>
-
-    </div>
-
-
-    <div class="hero-visual">
-
-        <div class="photo-circle"></div>
-
-        <div class="profile-container">
-
-            <img src="profile.png"
-                alt="Pradipta Kumar Prusty">
-
-        </div>
-
-        <div class="floating-card">
-
-            <span class="floating-number">
-                01
-            </span>
-
-            <div>
-                <strong>Data</strong>
-                <small>Engineer</small>
+            <div class="nav-menu">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
             </div>
 
-        </div>
-
-    </div>
-
-</div>
-
-<div class="scroll-indicator">
-    <span></span>
-    SCROLL TO EXPLORE
-</div>
-```
-
-</section>
-
-<!-- ================= ABOUT ================= -->
-
-<section class="about-section" id="about">
-
-```
-<div class="about-background-text">
-    ABOUT
-</div>
-
-<div class="about-container">
-
-    <div class="about-visual">
-
-        <div class="about-photo-frame"></div>
-
-        <div class="about-photo">
-
-            <img src="profile.png"
-                alt="Pradipta Kumar Prusty">
+            <button id="themeToggle" class="theme-toggle">
+                <span id="themeIcon">🌙</span>
+            </button>
 
         </div>
-
-        <div class="about-number">
-            02
-        </div>
-
-    </div>
+    </nav>
 
 
-    <div class="about-content">
+    <!-- ================= HOME ================= -->
+    <section id="home" class="hero">
 
-        <p class="section-label">
-            ABOUT ME
-        </p>
+        <div class="hero-container">
 
-        <h2>
-            Building reliable solutions
-            <span>from raw data.</span>
-        </h2>
+            <div class="hero-content">
 
-        <p class="about-description">
-            BCA student and aspiring Data Engineer passionate about
-            SQL, MySQL, Databricks, and modern data technologies.
-            Focused on building reliable, scalable and efficient
-            data solutions — from schema design to production pipelines.
-        </p>
-
-        <h3 class="sub-heading">
-            What I Do
-        </h3>
-
-        <div class="what-i-do-grid">
-
-            <div class="about-card">
-                <div class="about-card-icon">
-                    <i class="fa-solid fa-database"></i>
-                </div>
-
-                <h4>Data Engineering</h4>
-
-                <p>
-                    Designing reliable and scalable data workflows.
-                </p>
-            </div>
-
-
-            <div class="about-card">
-
-                <div class="about-card-icon">
-                    <i class="fa-solid fa-code"></i>
-                </div>
-
-                <h4>SQL & Databases</h4>
-
-                <p>
-                    Working with SQL, MySQL and structured data.
+                <p class="hero-small-title">
+                    DATA ENGINEER
                 </p>
 
-            </div>
+                <h1>
+                    Pradipta Kumar<br>
+                    <span>Prusty</span>
+                </h1>
 
+                <h2>
+                    Building Data. Creating Impact.
+                </h2>
 
-            <div class="about-card">
-
-                <div class="about-card-icon">
-                    <i class="fa-solid fa-cloud"></i>
-                </div>
-
-                <h4>Databricks</h4>
-
-                <p>
-                    Exploring modern Lakehouse and data platforms.
+                <p class="hero-description">
+                    I am a passionate Data Engineering enthusiast focused on
+                    building scalable data pipelines, working with SQL,
+                    Databricks, Apache Spark and modern data technologies.
                 </p>
 
-            </div>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        View Projects
+                    </a>
 
-
-            <div class="about-card">
-
-                <div class="about-card-icon">
-                    <i class="fa-solid fa-gears"></i>
+                    <a href="#contact" class="btn btn-outline">
+                        Contact Me
+                    </a>
                 </div>
 
-                <h4>Data Pipelines</h4>
+            </div>
 
-                <p>
-                    Building efficient ETL and data processing pipelines.
-                </p>
+
+            <div class="hero-visual">
+
+                <div class="photo-circle">
+
+                    <div class="profile-container">
+                        <img src="profile.png" alt="Pradipta Kumar Prusty">
+                    </div>
+
+                </div>
+
+                <div class="floating-card">
+                    <span class="floating-number">01</span>
+                    <span>Data Engineering</span>
+                </div>
 
             </div>
 
         </div>
 
-
-        <div class="about-stats">
-
-            <div class="stat-box">
-                <strong>03+</strong>
-                <span>Core Technologies</span>
-            </div>
-
-            <div class="stat-box">
-                <strong>15+</strong>
-                <span>Data Engineering Tasks</span>
-            </div>
-
-            <div class="stat-box">
-                <strong>01</strong>
-                <span>Growing Portfolio</span>
-            </div>
-
-        </div>
+    </section>
 
 
-        <div class="interests">
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="about-section">
 
-            <h3 class="sub-heading">
-                My Interests
-            </h3>
+        <div class="section-container">
 
-            <div class="interest-tags">
-
-                <span>Data Engineering</span>
-                <span>SQL</span>
-                <span>Python</span>
-                <span>Databricks</span>
-                <span>Data Pipelines</span>
-                <span>Technology</span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-```
-
-</section>
-
-<!-- ================= SKILLS ================= -->
-
-<section class="skills-section" id="skills">
-
-```
-<div class="section-container">
-
-    <p class="section-label">
-        MY SKILLS
-    </p>
-
-    <h2 class="section-title">
-        Technologies I <span>work with.</span>
-    </h2>
-
-    <p class="section-description">
-        Technologies and tools I am learning and using in my
-        Data Engineering journey.
-    </p>
-
-
-    <div class="skills-grid">
-
-        <div class="skill-card">
-            <i class="fa-brands fa-python"></i>
-            <h3>Python</h3>
-            <p>Programming & Data Processing</p>
-        </div>
-
-        <div class="skill-card">
-            <i class="fa-solid fa-database"></i>
-            <h3>SQL</h3>
-            <p>Queries & Data Analysis</p>
-        </div>
-
-        <div class="skill-card">
-            <i class="fa-solid fa-server"></i>
-            <h3>MySQL</h3>
-            <p>Database Management</p>
-        </div>
-
-        <div class="skill-card">
-            <i class="fa-solid fa-layer-group"></i>
-            <h3>Databricks</h3>
-            <p>Lakehouse & Data Engineering</p>
-        </div>
-
-        <div class="skill-card">
-            <i class="fa-solid fa-bolt"></i>
-            <h3>Apache Spark</h3>
-            <p>Distributed Data Processing</p>
-        </div>
-
-        <div class="skill-card">
-            <i class="fa-solid fa-table-cells"></i>
-            <h3>Delta Lake</h3>
-            <p>Reliable Data Storage</p>
-        </div>
-
-        <div class="skill-card">
-            <i class="fa-solid fa-code"></i>
-            <h3>HTML & CSS</h3>
-            <p>Web Development</p>
-        </div>
-
-        <div class="skill-card">
-            <i class="fa-solid fa-file-excel"></i>
-            <h3>MS Office</h3>
-            <p>Documentation & Productivity</p>
-        </div>
-
-    </div>
-
-</div>
-```
-
-</section>
-
-<!-- ================= PROJECTS ================= -->
-
-<section class="projects-section" id="projects">
-
-```
-<div class="section-container">
-
-    <p class="section-label">
-        MY PROJECTS
-    </p>
-
-    <h2 class="section-title">
-        Things I have <span>built.</span>
-    </h2>
-
-    <p class="section-description">
-        A collection of projects and practical work related to
-        Data Engineering, SQL and programming.
-    </p>
-
-
-    <div class="projects-grid">
-
-        <div class="project-card">
-
-            <div class="project-icon">
-                <i class="fa-solid fa-database"></i>
-            </div>
-
-            <h3>SQL Database Project</h3>
-
-            <p>
-                Database project involving table creation,
-                SQL queries, joins, aggregation, triggers
-                and stored procedures.
+            <p class="section-label">
+                ABOUT ME
             </p>
 
-            <div class="project-tags">
-                <span>SQL</span>
-                <span>MySQL</span>
-            </div>
+            <h2 class="section-title">
+                Turning Data Into <span>Insights</span>
+            </h2>
 
-        </div>
-
-
-        <div class="project-card">
-
-            <div class="project-icon">
-                <i class="fa-solid fa-layer-group"></i>
-            </div>
-
-            <h3>Databricks Data Pipeline</h3>
-
-            <p>
-                Practical Data Engineering workflow using
-                Databricks, Apache Spark, Delta Lake and
-                Lakehouse architecture.
+            <p class="section-description">
+                I am a BCA student passionate about Data Engineering,
+                databases and modern data platforms.
             </p>
 
-            <div class="project-tags">
-                <span>Databricks</span>
-                <span>Spark</span>
-                <span>Delta Lake</span>
+
+            <div class="about-container">
+
+                <div class="about-visual">
+
+                    <div class="about-photo-frame">
+                        <img
+                            src="profile.png"
+                            alt="Pradipta Kumar Prusty"
+                            class="about-photo"
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="about-content">
+
+                    <h3>
+                        Who I Am
+                    </h3>
+
+                    <p class="about-description">
+                        I am currently pursuing my Bachelor of Computer
+                        Applications and developing my skills in Data
+                        Engineering and Data Analytics.
+                    </p>
+
+                    <p class="about-description">
+                        I enjoy working with SQL, Python, MySQL, Databricks,
+                        Apache Spark and Delta Lake to understand how data
+                        moves from source systems to meaningful insights.
+                    </p>
+
+
+                    <div class="what-i-do-grid">
+
+                        <div class="about-card">
+                            <div class="about-card-icon">⚙️</div>
+
+                            <h4>Data Engineering</h4>
+
+                            <p>
+                                Designing and understanding reliable
+                                data pipelines.
+                            </p>
+                        </div>
+
+
+                        <div class="about-card">
+                            <div class="about-card-icon">🗄️</div>
+
+                            <h4>SQL & Databases</h4>
+
+                            <p>
+                                Working with SQL, MySQL and database concepts.
+                            </p>
+                        </div>
+
+
+                        <div class="about-card">
+                            <div class="about-card-icon">☁️</div>
+
+                            <h4>Databricks</h4>
+
+                            <p>
+                                Learning Lakehouse, Delta Lake and Spark.
+                            </p>
+                        </div>
+
+
+                        <div class="about-card">
+                            <div class="about-card-icon">📊</div>
+
+                            <h4>Data Pipelines</h4>
+
+                            <p>
+                                Building and understanding ETL workflows.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-stats">
+
+                <div class="stat-box">
+                    <h3>2027</h3>
+                    <p>BCA Graduation</p>
+                </div>
+
+                <div class="stat-box">
+                    <h3>15+</h3>
+                    <p>Projects & Assignments</p>
+                </div>
+
+                <div class="stat-box">
+                    <h3>2+</h3>
+                    <p>Databricks Certifications</p>
+                </div>
+
+                <div class="stat-box">
+                    <h3>∞</h3>
+                    <p>Learning Mindset</p>
+                </div>
+
             </div>
 
         </div>
 
+    </section>
 
-        <div class="project-card">
 
-            <div class="project-icon">
-                <i class="fa-solid fa-code"></i>
-            </div>
+    <!-- ================= SKILLS ================= -->
+    <section id="skills" class="skills-section">
 
-            <h3>Python Data Processing</h3>
+        <div class="section-container">
 
-            <p>
-                Python-based programming and data processing
-                exercises focused on problem solving and
-                automation.
+            <p class="section-label">
+                MY SKILLS
             </p>
 
-            <div class="project-tags">
-                <span>Python</span>
-                <span>Programming</span>
-            </div>
+            <h2 class="section-title">
+                Technical <span>Skills</span>
+            </h2>
 
-        </div>
-
-
-        <div class="project-card">
-
-            <div class="project-icon">
-                <i class="fa-solid fa-chart-column"></i>
-            </div>
-
-            <h3>Data Visualization Dashboard</h3>
-
-            <p>
-                Data visualization and dashboard concepts
-                using Databricks SQL for monitoring and
-                analyzing data.
+            <p class="section-description">
+                Technologies and tools I use while learning and building
+                data engineering projects.
             </p>
 
-            <div class="project-tags">
-                <span>Databricks SQL</span>
-                <span>Dashboard</span>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <div class="skill-icon">🐍</div>
+                    <h3>Python</h3>
+                    <p>Programming & Data Processing</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🗃️</div>
+                    <h3>SQL</h3>
+                    <p>Queries & Data Analysis</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🛢️</div>
+                    <h3>MySQL</h3>
+                    <p>Database Management</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">⚡</div>
+                    <h3>Databricks</h3>
+                    <p>Lakehouse & Data Engineering</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🔥</div>
+                    <h3>Apache Spark</h3>
+                    <p>Distributed Data Processing</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">💾</div>
+                    <h3>Delta Lake</h3>
+                    <p>Reliable Data Storage</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <h3>HTML & CSS</h3>
+                    <p>Web Development</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">📑</div>
+                    <h3>MS Office</h3>
+                    <p>Documentation & Productivity</p>
+                </div>
+
             </div>
 
         </div>
 
-    </div>
-
-</div>
-```
-
-</section>
-
-<!-- ================= CONTACT ================= -->
-
-<section class="contact-section" id="contact">
-
-```
-<div class="section-container">
-
-    <p class="section-label">
-        CONTACT ME
-    </p>
-
-    <h2 class="section-title">
-        Let's build something <span>together.</span>
-    </h2>
-
-    <p class="section-description">
-        Interested in Data Engineering, technology or collaboration?
-        Feel free to connect with me.
-    </p>
+    </section>
 
 
-    <div class="contact-grid">
+    <!-- ================= PROJECTS ================= -->
+    <section id="projects" class="projects-section">
 
+        <div class="section-container">
 
-        <div class="contact-card">
-
-            <div class="contact-icon">
-                <i class="fa-solid fa-envelope"></i>
-            </div>
-
-            <h3>Email</h3>
-
-            <p>
-                Let's connect through email.
+            <p class="section-label">
+                MY WORK
             </p>
 
-            <a href="mailto:your-email@example.com">
-                Send Email
-            </a>
+            <h2 class="section-title">
+                Featured <span>Projects</span>
+            </h2>
 
-        </div>
-
-
-        <div class="contact-card">
-
-            <div class="contact-icon">
-                <i class="fa-brands fa-github"></i>
-            </div>
-
-            <h3>GitHub</h3>
-
-            <p>
-                Explore my projects and repositories.
+            <p class="section-description">
+                Some of my academic, learning and data engineering projects.
             </p>
 
-            <a href="https://github.com/pradiptakumarprusty"
-               target="_blank">
-                View GitHub
-            </a>
 
-        </div>
+            <div class="projects-grid">
+
+                <div class="project-card">
+
+                    <div class="project-icon">
+                        🗄️
+                    </div>
+
+                    <h3>
+                        SQL Database Project
+                    </h3>
+
+                    <p>
+                        Designed and worked with relational databases using
+                        SQL queries, tables, joins, triggers and procedures.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>SQL</span>
+                        <span>MySQL</span>
+                    </div>
+
+                </div>
 
 
-        <div class="contact-card">
+                <div class="project-card">
 
-            <div class="contact-icon">
-                <i class="fa-brands fa-linkedin"></i>
+                    <div class="project-icon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        Databricks Data Pipeline
+                    </h3>
+
+                    <p>
+                        Worked with Databricks, Apache Spark, Delta Lake and
+                        modern data engineering concepts.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Databricks</span>
+                        <span>Spark</span>
+                        <span>Delta Lake</span>
+                    </div>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <div class="project-icon">
+                        🐍
+                    </div>
+
+                    <h3>
+                        Python Data Processing
+                    </h3>
+
+                    <p>
+                        Created Python programs for data processing,
+                        problem solving and automation.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Data</span>
+                    </div>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <div class="project-icon">
+                        📊
+                    </div>
+
+                    <h3>
+                        Data Visualization Dashboard
+                    </h3>
+
+                    <p>
+                        Explored dashboards and data visualization using
+                        Databricks SQL.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Databricks SQL</span>
+                        <span>Dashboard</span>
+                    </div>
+
+                </div>
+
             </div>
 
-            <h3>LinkedIn</h3>
+        </div>
 
-            <p>
-                Connect with me professionally.
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="contact-section">
+
+        <div class="section-container">
+
+            <p class="section-label">
+                GET IN TOUCH
             </p>
 
-            <a href="#" target="_blank">
-                LinkedIn Profile
-            </a>
+            <h2 class="section-title">
+                Let's <span>Connect</span>
+            </h2>
+
+            <p class="section-description">
+                Interested in collaborating, discussing technology or
+                connecting with me? Feel free to reach out.
+            </p>
+
+
+            <div class="contact-grid">
+
+                <a
+                    href="mailto:your-email@example.com"
+                    class="contact-card"
+                >
+                    <div class="contact-icon">
+                        ✉️
+                    </div>
+
+                    <h3>Email</h3>
+
+                    <p>
+                        Get in touch with me
+                    </p>
+                </a>
+
+
+                <a
+                    href="https://github.com/pradiptakumarprusty"
+                    target="_blank"
+                    class="contact-card"
+                >
+                    <div class="contact-icon">
+                        💻
+                    </div>
+
+                    <h3>GitHub</h3>
+
+                    <p>
+                        View my repositories
+                    </p>
+                </a>
+
+
+                <a
+                    href="#"
+                    class="contact-card"
+                >
+                    <div class="contact-icon">
+                        💼
+                    </div>
+
+                    <h3>LinkedIn</h3>
+
+                    <p>
+                        Connect with me
+                    </p>
+                </a>
+
+            </div>
 
         </div>
 
-    </div>
+    </section>
 
 
-    <div class="contact-footer">
+    <!-- ================= FOOTER ================= -->
+    <footer class="contact-footer">
 
         <p>
             © 2026 Pradipta Kumar Prusty. All Rights Reserved.
         </p>
 
-    </div>
+    </footer>
 
-</div>
-```
 
-</section>
-
-</main>
-
-<script src="script.js"></script>
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="script.js"></script>
 
 </body>
-
 </html>
