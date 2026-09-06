@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (targetSection) {
                     e.preventDefault();
 
-                    const headerOffset = 80;
+                    const headerOffset = 110;
 
 const elementPosition = targetSection.getBoundingClientRect().top;
 const offsetPosition = elementPosition + window.scrollY - headerOffset;
