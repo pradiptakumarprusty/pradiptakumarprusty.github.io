@@ -892,3 +892,44 @@ body.light-mode .contact-card p {
 .resume-btn:active {
     transform: translateY(-1px) scale(0.97);
 }
+/* Resume Button */
+.resume-btn {
+    /* tumhara pehle wala code */
+}
+
+.resume-btn:hover {
+    /* tumhara pehle wala hover code */
+}
+
+/* Shine Effect */
+.resume-btn::before {
+    /* tumhara pehle wala shine code */
+}
+
+/* Click Effect */
+.resume-btn:active {
+    /* tumhara pehle wala click code */
+}
+
+
+/* 🔥 Resume Glow Effect — ISKE BAAD */
+.resume-btn {
+    animation: resumeGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes resumeGlow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(255, 40, 40, 0.2);
+    }
+
+    50% {
+        box-shadow:
+            0 0 15px rgba(255, 40, 40, 0.45),
+            0 0 30px rgba(255, 40, 40, 0.15);
+    }
+}
+
+.resume-btn:hover {
+    animation: none;
+    transform: translateY(-4px);
+}
