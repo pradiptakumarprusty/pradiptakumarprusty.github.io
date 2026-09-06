@@ -19,10 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (targetSection) {
                     e.preventDefault();
 
-                    targetSection.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
+                    const headerOffset = 80;
+
+const elementPosition = targetSection.getBoundingClientRect().top;
+const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth"
+});
                 }
             }
 
