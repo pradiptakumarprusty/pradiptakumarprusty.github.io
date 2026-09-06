@@ -1,22 +1,119 @@
-/* ==========================================
-   DARK / LIGHT MODE TOGGLE
-========================================== */
+document.addEventListener("DOMContentLoaded", function () {
 
-const themeToggle = document.getElementById("themeToggle");
-const themeIcon = document.getElementById("themeIcon");
+    /* =========================
+       SMOOTH NAVIGATION
+    ========================= */
 
-themeToggle.addEventListener("click", () => {
+    const navLinks = document.querySelectorAll(".nav-menu a");
 
-    document.body.classList.toggle("light-theme");
+    navLinks.forEach(function (link) {
 
-    if (document.body.classList.contains("light-theme")) {
+        link.addEventListener("click", function (e) {
 
-        themeIcon.textContent = "☀";
+            const targetId = this.getAttribute("href");
 
-    } else {
+            if (targetId && targetId.startsWith("#")) {
 
-        themeIcon.textContent = "☾";
+                const targetSection = document.querySelector(targetId);
+
+                if (targetSection) {
+                    e.preventDefault();
+
+                    targetSection.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                }
+            }
+
+        });
+
+    });
+
+
+    /* =========================
+       THEME TOGGLE
+    ========================= */
+
+    const themeToggle = document.getElementById("themeToggle");
+    const themeIcon = document.getElementById("themeIcon");
+
+    if (themeToggle) {
+
+        themeToggle.addEventListener("click", function () {
+
+            document.body.classList.toggle("light-mode");
+
+            if (document.body.classList.contains("light-mode")) {
+
+                themeIcon.textContent = "☀️";
+
+                localStorage.setItem("theme", "light");
+
+            } else {
+
+                themeIcon.textContent = "🌙";
+
+                localStorage.setItem("theme", "dark");
+
+            }
+
+        });
 
     }
+
+
+    /* =========================
+       LOAD SAVED THEME
+    ========================= */
+
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "light") {
+
+        document.body.classList.add("light-mode");
+
+        if (themeIcon) {
+            themeIcon.textContent = "☀️";
+        }
+
+    }
+
+
+    /* =========================
+       ACTIVE NAVIGATION
+    ========================= */
+
+    const sections = document.querySelectorAll("section[id]");
+
+    window.addEventListener("scroll", function () {
+
+        let currentSection = "";
+
+        sections.forEach(function (section) {
+
+            const sectionTop = section.offsetTop - 150;
+            const sectionHeight = section.offsetHeight;
+
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionTop + sectionHeight
+            ) {
+                currentSection = section.getAttribute("id");
+            }
+
+        });
+
+        navLinks.forEach(function (link) {
+
+            link.classList.remove("active");
+
+            if (link.getAttribute("href") === "#" + currentSection) {
+                link.classList.add("active");
+            }
+
+        });
+
+    });
 
 });
